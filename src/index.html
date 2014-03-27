@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<!-- build:css js/app.js -->
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="css/styles.css" />
+	<!-- endbuild -->
+</head>
+<body>
+	<h1>Dashboard</h1>
+		
+	<div class="grid">
+		<div class="grid__item two-thirds" data-widget-name="HelloWorld">
+			whole
+		</div>
+		<div class="grid__item one-third" data-widget-name="TimeDate">
+			whole
+		</div>
+	</div>
+
+	<div class="grid">
+		<div class="grid__item one-third" data-widget-name="HelloWorld">
+			third
+		</div>
+		<div class="grid__item one-third" data-widget-name="HelloWorld">
+			third
+		</div>
+		<div class="grid__item one-third" data-widget-name="HelloWorld">
+			third
+		</div>
+	</div>
+
+
+<!-- build:js js/app.js -->
+<script src="js/lodash.js"></script>
+<script src="js/moment.js"></script>
+<script src="js/handlebars.runtime-v1.3.0.js"></script>
+<script src="js/templates.js"></script>
+
+<script src="js/widgets/helloWorld.js"></script>
+<script src="js/widgets/timeDate.js"></script>
+
+<script src="js/site.js"></script>
+<!-- endbuild -->
+
+</body>
+</html>
+

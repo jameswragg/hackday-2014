@@ -1,0 +1,102 @@
+@import 'csswizardry-grids';
+@import 'fonts';
+
+
+$bg_colour:             #101214;
+$box_bg_colour:         #2a2a2a;
+$box_colour:            #d3d4d4;
+
+
+html {
+    background: $bg_colour;
+}
+
+body {
+	color: #d3d4d4;
+    font-family: sans-serif;
+    margin: 1em;
+	-webkit-user-select: none; 
+}
+
+/**
+ * css shapes
+ */
+.circle {
+	width: 8px;
+	height: 8px;
+	background: red;
+	border-radius: 4px;
+	display: inline-block;
+}
+.triangle-up {
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 20px solid lightgreen;
+	display: inline-block;
+}
+.triangle-down {
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 20px solid red;
+	display: inline-block;
+}
+
+
+
+
+
+.widget {
+	margin: 12px 0;
+	color: #d3d4d4;
+	background-color: $box_bg_colour;
+
+	.widget__header {
+		background-color: lighten($box_bg_colour, 5%);
+		font-size: 15px;
+		text-transform: uppercase;
+		padding: 10px;
+		margin: 0;
+	}
+
+	p {
+		margin: 5px 0;
+	}
+
+	.icon {
+		text-decoration: none;
+		color: inherit;
+		// font-size: 140%;
+		vertical-align: middle;
+	}
+
+	.widget__content {
+		padding: 15px;
+	}
+
+}
+
+.widget--active .widget__header {
+	background-color: lighten($box_bg_colour, 10%);
+}
+.widget--active .circle {
+	background-color: lightgreen;
+}
+
+.widget__content {}
+.widget__content__header {
+	font-size: 350%;
+	margin: 0 0 10px 0;
+}
+
+.TimeDate {
+	.day {
+
+	}
+	.date {
+
+	}
+}
