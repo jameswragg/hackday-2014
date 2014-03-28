@@ -105,6 +105,22 @@ module.exports = function(grunt) {
                     src: ['src/*.html'],
                     dest: 'dist/'
                 }]
+            },
+            images: {
+                files: [{
+                    expand: true,
+                    flatten: true,
+                    src: ['src/images/*'],
+                    dest: 'dist/images/'
+                }]
+            },
+            globe: {
+                files: [{
+                    expand: true,
+                    flatten: true,
+                    src: ['src/global/*'],
+                    dest: 'dist/global/'
+                }]
             }
         },
 
@@ -147,9 +163,9 @@ module.exports = function(grunt) {
 
 
     grunt.registerTask('test', ['jshint', 'qunit']);
-    grunt.registerTask('use', ['useminPrepare', 'usemin', 'concat', 'uglify'])
+    grunt.registerTask('use', ['useminPrepare', 'usemin', 'concat', 'uglify']);
 
-    grunt.registerTask('regular', ['clean', 'handlebars', 'sass', 'copy:bowers', 'copy:fonts', 'copy:html', 'copy:js']);
+    grunt.registerTask('regular', ['clean', 'handlebars', 'sass', 'copy']);
     grunt.registerTask('default', ['regular', 'use', 'connect', 'watch']);
     grunt.registerTask('dev', ['regular', 'connect', 'watch']);
 

@@ -1,0 +1,14 @@
+<div class="widget {{#if enabled}}widget--active{{/if}}">
+
+	<header class="widget__header">
+		<i class="circle"></i> {{default options.name "Sparkline"}} 
+	</header>
+	
+	<div class="widget__content">
+		{{!-- <h1 class="widget__content__header">{{thisCounter}}</h1> --}}
+
+		<embed class="sparkline" src="/js/sparkline.svg?{{csvValues}}&current&rgba:255,255,255,1" type="image/svg+xml"></embed>
+
+	</div>
+
+</div>

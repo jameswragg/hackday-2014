@@ -13,6 +13,7 @@
         me.node = node;
         me.widgetName = 'TimeDate';
         me.templateName = 'timeDate';
+        me.widgetOptions = {};
         me.counter = 0;
         me.enabled = true;
         me.updateInt = 1000;
@@ -63,8 +64,9 @@
     TimeDate.prototype.init = function() {
         var me = this;
 
-        console.log('Init', me);
-        me.node.innerHTML = me.template();
+        clearInterval(me.timer);
+
+        console.log('Init', me.constructor.name);
         me.start();
 
         me.node.addEventListener('click', function() {

@@ -6,41 +6,80 @@
 	<!-- build:css js/app.js -->
 	<link rel="stylesheet" href="css/normalize.css" />
 	<link rel="stylesheet" href="css/styles.css" />
+
+
+    <link type="text/css" rel="stylesheet" href="global/globe.css"/>
+
 	<!-- endbuild -->
 </head>
 <body>
-	<h1>Dashboard</h1>
+<div class="log">
+	&nbsp;
+</div>
+
+<div class="container-image">
+<div class="container">
+	<div class="grid">
+		<div class="grid__item two-thirds">
+			<h1 class="country-name">Loading…</h1>
+		</div>
+		<div class="grid__item one-third">
+			<div class="info-panel" data-js-hook="">
+
+				<div class="f32">
+					<div class="flag"></div>
+				</div>
+
+			</div>
+		</div>
+	</div>
 		
 	<div class="grid">
-		<div class="grid__item two-thirds" data-widget-name="HelloWorld">
-			whole
+		<div class="grid__item two-thirds" data-widget-name="Map">
+		    <div id="map"></div>
 		</div>
 		<div class="grid__item one-third" data-widget-name="TimeDate">
-			whole
 		</div>
 	</div>
 
 	<div class="grid">
-		<div class="grid__item one-third" data-widget-name="HelloWorld">
-			third
+		<div class="grid__item one-third" data-widget-name="NumberDiff" data-widget-data="{'name': 'Users', 'property': 'users'}">
 		</div>
-		<div class="grid__item one-third" data-widget-name="HelloWorld">
-			third
+		<div class="grid__item one-third" data-widget-name="NumberDiff" data-widget-data="{'name': 'Job Postings', 'property': 'jobPostings'}">
 		</div>
-		<div class="grid__item one-third" data-widget-name="HelloWorld">
-			third
+		<div class="grid__item one-third" data-widget-name="NumberDiff" data-widget-data="{'name': 'Applications', 'property': 'applications'}">
+		</div>
+	</div>
+	<div class="grid">
+		<div class="grid__item one-third" data-widget-name="SparkLine" data-widget-data="{'name': 'Users', 'property': 'users'}">
+		</div>
+ 		<div class="grid__item one-third" data-widget-name="SparkLine" data-widget-data="{'name': 'Job Postings', 'property': 'jobPostings'}">
+		</div>
+		<div class="grid__item one-third" data-widget-name="SparkLine"data-widget-data="{'name': 'Applications', 'property': 'applications'}">
 		</div>
 	</div>
 
 
+	<div class="overlay"></div>
+</div>
+</div>
+
 <!-- build:js js/app.js -->
+<script src="js/jquery.js"></script>
 <script src="js/lodash.js"></script>
 <script src="js/moment.js"></script>
 <script src="js/handlebars.runtime-v1.3.0.js"></script>
+<script src="js/swag.js"></script>
 <script src="js/templates.js"></script>
+<script src="js/log.js"></script>
 
-<script src="js/widgets/helloWorld.js"></script>
+<script src="js/widgets/NumberDiff.js"></script>
+<script src="js/widgets/sparkLine.js"></script>
 <script src="js/widgets/timeDate.js"></script>
+
+<script src="global/d3.js"></script>
+<script src="global/d3.geo.js"></script>
+<script src="global/vis.js"></script>
 
 <script src="js/site.js"></script>
 <!-- endbuild -->

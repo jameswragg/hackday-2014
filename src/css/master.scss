@@ -1,21 +1,94 @@
 @import 'csswizardry-grids';
+@import 'flags32';
 @import 'fonts';
 
 
-$bg_colour:             #101214;
-$box_bg_colour:         #2a2a2a;
-$box_colour:            #d3d4d4;
-
+$page_bg_colour: #fff;
+$container_bg_color: lighten(#101214, 2%);
+$box_bg_colour: #2a2a2a;
+$text_color: #d3d4d4;
 
 html {
-    background: $bg_colour;
+    background: $page_bg_colour;
 }
 
 body {
-	color: #d3d4d4;
-    font-family: sans-serif;
-    margin: 1em;
+	color: $text_color;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: lighter;
+    margin: 0;
 	-webkit-user-select: none; 
+}
+.log {
+	opacity: 0;
+	transition: opacity 0.5s;
+	background: red;
+	color: white;
+	padding: 5px 10px;
+}
+.log.show {
+	opacity: 1;
+}
+.container-image {
+	background-image: url(/images/tv.png);
+	background-size: 100%;
+	background-position: top left;
+	padding: 41px 41px 40px 67px;
+	max-width: 868px;
+	max-height: 1550px;
+	margin: 1em auto 5em;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	background-color: #333;
+}
+.container {
+	margin: 0 auto;
+	height: 1467px;
+	max-height: 1404px;
+	overflow: scroll;
+	background: $container_bg_color;
+	padding: 30px;
+	border-radius: 2px;
+	border: 1px solid #333;
+	position: relative;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 80%;
+	height: 100%;
+	max-height: 700px;
+	background-image: url(/images/overlay.png);
+	background-size: cover;
+	z-index: 0;
+	pointer-events: none;
+}
+
+.f32 {
+	margin: 21.440px 0;
+	height: 37px;
+	position: relative;
+}
+.f32 .flag {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+#map {
+	// position: absolute;
+	// top: 0;
+	// left: 0;
+	width: 100%;
+	// height: 800px;
+}
+.q9-11 {
+	fill: orange;
+}
+path {
+	// fill: none;
+	stroke: darken($text_color, 30%);
 }
 
 /**
@@ -28,33 +101,68 @@ body {
 	border-radius: 4px;
 	display: inline-block;
 }
-.triangle-up {
+.indicator {
+	margin: 0 2px 0 0;
+}
+.indicator-up {
 	width: 0;
 	height: 0;
-	border-left: 10px solid transparent;
-	border-right: 10px solid transparent;
-	border-bottom: 20px solid lightgreen;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-bottom: 16px solid lightgreen;
 	display: inline-block;
+	position: relative;
+	top: 2.5px;
 }
-.triangle-down {
+.indicator-down {
 	width: 0;
 	height: 0;
-	border-left: 10px solid transparent;
-	border-right: 10px solid transparent;
-	border-top: 20px solid red;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-top: 16px solid red;
+	display: inline-block;
+	position: relative;
+	top: 2.5px;
+}
+.indicator-same {
+	width: 16px;
+	height: 5px;
+	position: relative;
+	top: -2.5px;
+	background-color: orange;
 	display: inline-block;
 }
 
-
-
+/**
+ * SVG embeds
+ */
+.sparkline {
+	width: 100%;
+	height: 2em;
+}
+svg {
+  width:  100%;
+  height: 400px;
+  // pointer-events: all;
+}
 
 
 .widget {
 	margin: 12px 0;
 	color: #d3d4d4;
-	background-color: $box_bg_colour;
+	border-radius: 4px;
+	box-shadow: 0 5px 5px black;
+
+	// background-color: $box_bg_colour;
+background-color: #373737;
+background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(55, 55, 55)), to(rgb(38, 38, 38)));
+background-image: -webkit-linear-gradient(top, rgb(55, 55, 55), rgb(38, 38, 38));
+background-image: -moz-linear-gradient(top, rgb(55, 55, 55), rgb(38, 38, 38));
+background-image: -ms-linear-gradient(top, rgb(55, 55, 55), rgb(38, 38, 38));
+background-image: linear-gradient(top, rgb(55, 55, 55), rgb(38, 38, 38));
 
 	.widget__header {
+		border-radius: 4px 4px 0 0;
 		background-color: lighten($box_bg_colour, 5%);
 		font-size: 15px;
 		text-transform: uppercase;
@@ -75,6 +183,12 @@ body {
 
 	.widget__content {
 		padding: 15px;
+	}
+
+	.widget__content__prevCounter {
+		font-size: 12px;
+		color: $text_color;
+		opacity: 0.5;
 	}
 
 }

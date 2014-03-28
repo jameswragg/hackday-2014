@@ -1,0 +1,12 @@
+<div class="widget {{#if enabled}}widget--active{{/if}}">
+
+	<header class="widget__header">
+		<i class="circle"></i> {{default options.name "Number"}} 
+	</header>
+	
+	<div class="widget__content">
+		<h1 class="widget__content__header">{{displayCounter}}</h1>
+		<p><i class="indicator indicator-{{direction}}"></i> {{percentageDiff}}% <span class="widget__content__prevCounter">from {{displayLastCounter}}</span></p>
+	</div>
+
+</div>
